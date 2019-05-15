@@ -1,0 +1,48 @@
+{
+	"name": "iot-device-cube-test",
+	"displayName": "iot-device-cube-test",
+	"description": "",
+	"version": "0.0.1",
+	"extensionKind": "workspace",
+	"publisher": "zlhe-test",
+	"engines": {
+		"vscode": "^1.33.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:iotcubesample.listvolume"
+	],
+	"main": "./out/extension.js",
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "npm run compile && node ./node_modules/vscode/bin/test"
+	},
+	"contributes": {
+		"commands": [
+			{
+				"command": "iotcubesample.listvolume",
+				"title": "Filesystem Sample",
+				"category": "IoT Cube Sample"
+			}
+		]
+	},
+	"devDependencies": {
+		"typescript": "^3.3.1",
+		"vscode": "^1.1.28",
+		"tslint": "^5.12.1",
+		"@types/node": "^10.12.21",
+		"@types/mocha": "^2.2.42"
+	},
+	"dependencies": {
+		"volumelist": "^0.1.8",
+		"vscode-iot-device-cube-sdk": "0.0.5"
+	},
+	"extensionDependencies": [
+		"zlhe-test.vscode-iot-device-cube"
+	]
+}
